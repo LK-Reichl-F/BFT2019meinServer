@@ -6,7 +6,7 @@ async function rufeServer() {
     const url = new URL("http://192.168.247.132:3000/summe");
     url.searchParams.append("a", ersteZahl);
     url.searchParams.append("b", zweiteZahl);
-    document.getElementById("ergebnis").innerHTML=url.toString();
+    document.getElementById("url").innerHTML=url.toString();
 
     let ergebnis;
     try {
