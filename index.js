@@ -1,8 +1,14 @@
 "use strict";
 
-const express = require('express');
-const app = express();
+// Laden der Node.js-Bibliotheken (siehe npmjs.org):
+
+// Siehe https://socket.io/get-started/chat/
+const app = require('express')();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 const port = 3000;
+
+// Express-Code:
 
 app.use(express.static('public'));
 
@@ -23,3 +29,9 @@ app.get('/summe', function (req, res) {
 app.listen(port, function () {
     console.log('Höre auf Port ' + port);
 });
+
+// WebSocket-Code:
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+  });
