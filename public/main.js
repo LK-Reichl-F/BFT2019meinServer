@@ -1,5 +1,7 @@
 "use strict";
 
+// Express.js-Code:
+
 async function rufeServer() {
     const ersteZahl = document.getElementById("ersteZahl").value;
     const zweiteZahl = document.getElementById("zweiteZahl").value;
@@ -17,3 +19,5 @@ async function rufeServer() {
     }
     document.getElementById("ergebnis").innerText=ergebnis.summe;
 }
+
+// WebSocket-Code:

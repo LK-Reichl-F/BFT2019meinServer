@@ -34,4 +34,15 @@ app.listen(port, function () {
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-  });
+    console.log("socket.id: " + socket.id);
+
+    socket.on("Gruß vom Browser", function (daten) {
+        console.log("Gruß vom Browser mit den Daten " + daten);
+        socket.emit("Gruß vom Server", "Danke für die Info!");
+    });
+    
+    socket.on("disconnect", function () {
+        console.log("Verbindung zum Browser beendet.");
+        console.log("socket.id: " + socket.id);
+    });
+});
