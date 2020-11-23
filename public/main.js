@@ -21,3 +21,9 @@ async function rufeServer() {
 }
 
 // WebSocket-Code:
+
+const socket = io.connect();
+socket.on("Gruß vom Server", function (daten) {
+   console.log(daten);
+});
+socket.emit("Gruß vom Browser", "Hi Server!");
