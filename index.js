@@ -27,7 +27,7 @@ app.get('/summe', function (req, res) {
 });
 
 
-app.listen(port, function () {
+http.listen(port, function () {
     console.log('Höre auf Port ' + port);
 });
 
