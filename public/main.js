@@ -1,6 +1,17 @@
 "use strict";
 
-// Express.js-Code:
+// Laden der Node.js-Bibliotheken (siehe npmjs.org):
+
+// Siehe https://socket.io/get-started/chat/
+const express = require('express'); 
+const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+const port = 3000;
+
+// Express-Code:
+
+app.use(express.static('public'));// Express.js-Code:
 
 async function rufeServer() {
     const ersteZahl = document.getElementById("ersteZahl").value;
