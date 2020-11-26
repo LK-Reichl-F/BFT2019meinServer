@@ -15,3 +15,12 @@ function abschicken() {
     const text = document.getElementById("eingabe").value;
     socket.emit("Nachricht", text);
 }
+
+function nameSenden() {
+    const name = document.getElementById("name").value;
+    socket.emit("Name", name);
+}
+
+socket.on("Problem", function (text) {
+    alert(text);
+});
